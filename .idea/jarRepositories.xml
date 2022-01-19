@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="PODS-snapshots" />
+      <option name="name" value="PODS-repo" />
+      <option name="url" value="https://artifactory.service.anz/artifactory/PODS" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pspsnapshots" />
+      <option name="name" value="markets-local-snapshots" />
+      <option name="url" value="https://artifactory.service.anz/artifactory/psp" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss-ga-repository" />
+      <option name="name" value="JBoss GA Tech Preview Maven Repository" />
+      <option name="url" value="https://artifactory.service.anz/artifactory/mavencentralrepo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="pts-repo" />
+      <option name="url" value="https://artifactory.service.anz/artifactory/pts-repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nuxeo" />
+      <option name="name" value="nuxeo" />
+      <option name="url" value="https://maven-eu.nuxeo.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="prexsnapshots" />
+      <option name="name" value="payments-repository-and-exchance-local-snapshots" />
+      <option name="url" value="https://artifactory.service.anz/artifactory/PREX-LOCAL" />
+    </remote-repository>
+  </component>
+</project>
