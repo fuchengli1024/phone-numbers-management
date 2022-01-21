@@ -2,22 +2,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <parent>
-        <artifactId>prex-service-scheduler-parent</artifactId>
-        <groupId>com.anz.payments.data</groupId>
-        <version>1.0.0</version>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
 
-    <artifactId>prex-service-scheduler</artifactId>
+    <groupId>com.codetest.fucheng.phonenumbers</groupId>
+    <artifactId>application</artifactId>
     <name>application</name>
+    <version>1.0.0</version>
 
+
+    <properties>
+        <java.jre.version>1.8</java.jre.version>
+        <springfox.version>3.0.0</springfox.version>
+        <swagger.version>1.6.2</swagger.version>
+        <swagger-plugin.version>2.4.17</swagger-plugin.version>
+        <javax.version>2.0.1.Final</javax.version>
+        <mockito-junit.version>3.7.7</mockito-junit.version>
+        <mockito.core.version>3.6.0</mockito.core.version>
+        <junit.jupiter.version>5.6.3</junit.jupiter.version>
+        <specification>1.0.0</specification>
+        <lombok.version>1.18.12</lombok.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <commons-io.version>2.5</commons-io.version>
+        <mapper.version>1.4.1.Final</mapper.version>
+    </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.anz.payments.data</groupId>
-            <artifactId>api-scheduler</artifactId>
-            <version>${api-scheduler.version}</version>
+            <groupId>com.codetest.fucheng.phonenumbers</groupId>
+            <artifactId>specification</artifactId>
+            <version>${specification}</version>
         </dependency>
 
         <dependency>
@@ -103,6 +123,53 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapper.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

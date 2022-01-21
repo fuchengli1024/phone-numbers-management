@@ -1,0 +1,102 @@
+swagger: "2.0"
+info:
+  title: Phone Number Management Service
+  description: Phone Number Management Service
+  version: 1.0.0
+
+basePath: /v1/
+
+paths:
+  /phoneNumbers:
+    post:
+      tags:
+        - PhoneNumber
+      summary: active phone number
+      operationId: ActivePhoneNumber
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/PhoneNumber'
+      deprecated: false
+      parameters:
+        - required: true
+          name: body
+          in: body
+          schema:
+            $ref: '#/definitions/PhoneNumber'
+      consumes: []
+      produces:
+        - application/octet-stream
+    get:
+      tags:
+        - PhoneNumber
+      summary: get all phone numbers
+      operationId: find phone numbers
+      responses:
+        '200':
+          description: List of Phone Numbers
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PhoneNumber'
+      deprecated: false
+      parameters: []
+      produces:
+        - application/octet-stream
+  '/phoneNumbers/customer/{customerId}':
+    get:
+      tags:
+        - PhoneNumber
+      summary: get all phone numbers of a single customer
+      operationId: get Phone Number By Customer Id
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Service
+          schema:
+            $ref: '#/definitions/PhoneNumber'
+      deprecated: false
+      produces:
+        - application/octet-stream
+definitions:
+  PhoneNumber:
+    type: object
+    required:  # List the required properties here
+      - customerId
+      - type
+      - phoneNumber
+    properties:
+      id:
+        type: string
+      phoneNumber:
+        type: string
+        description: phone number
+        example: +61434583679
+      customerId:
+        type: string
+        description: customer Id
+        example: customer123
+      description:
+        type: string
+        example: optional description.
+      type:
+        type: string
+        description: the type of phone number
+        enum:
+          - mobile
+          - fixedLine
+      status:
+        type: string
+        enum:
+          - actived
+          - processing
+      simSerial:
+        type: string
+        description: SIM card number
+        example: 89-302-720-40000001234-9
+x-components: {}
